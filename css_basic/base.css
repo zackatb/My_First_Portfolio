@@ -113,6 +113,7 @@ header .right {
 main {
     display: flex;
     flex-direction: row;
+    flex: auto;
 }
 
 
@@ -202,4 +203,39 @@ h6 {
   header .right {
   	float: none;
   }
+}
+
+/* New additions for flex layout */
+
+/* Body and Main as flex containers */
+body {
+    display: flex;
+    flex-direction: column; /* Arrange header, main, and footer in a column */
+    height: 100vh; /* Ensures body takes full viewport height */
+}
+
+main {
+    display: flex;
+    flex-direction: row; /* Arrange article and aside in a row */
+    flex: auto; /* Let the main container grow and shrink as needed */
+}
+
+/* Article and Aside proportions */
+article {
+    flex: 2; /* Article takes 2/3 of the available space */
+    overflow-y: auto; /* Enable scrolling within article */
+}
+
+aside {
+    flex: 1; /* Aside takes 1/3 of the available space */
+    overflow-y: auto; /* Enable scrolling within aside */
+}
+
+/* Optional: Add some height to the header and footer */
+header {
+    height: 80px; /* Fixed header height */
+}
+
+footer {
+    height: 80px; /* Fixed footer height */
 }
