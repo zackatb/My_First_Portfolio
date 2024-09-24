@@ -39,6 +39,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
     display: flex;
+    flex-direction: column; /* Ensure body is a column flex container */
 }
 blockquote, q {
 	quotes: none;
@@ -112,7 +113,7 @@ header .right {
 }
 main {
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* Main is a row flex container */
     flex: auto;
 }
 
@@ -193,49 +194,17 @@ h6 {
 	margin: 5px 0;
 }
 
+/* Responsive layout for mobile */
 @media (max-width: 800px) {
   body.works_on_smartphone {
-  	display: block;
+  	display: block; /* Switches layout to block structure for mobile */
   }
+  
   body.works_on_smartphone main {
-  	display: block;
+  	display: block; /* Stacks article and aside for small screens */
   }
+  
   header .right {
-  	float: none;
+  	float: none; /* Adjust header layout */
   }
-}
-
-/* New additions for flex layout */
-
-/* Body and Main as flex containers */
-body {
-    display: flex;
-    flex-direction: column; /* Arrange header, main, and footer in a column */
-    height: 100vh; /* Ensures body takes full viewport height */
-}
-
-main {
-    display: flex;
-    flex-direction: row; /* Arrange article and aside in a row */
-    flex: auto; /* Let the main container grow and shrink as needed */
-}
-
-/* Article and Aside proportions */
-article {
-    flex: 2; /* Article takes 2/3 of the available space */
-    overflow-y: auto; /* Enable scrolling within article */
-}
-
-aside {
-    flex: 1; /* Aside takes 1/3 of the available space */
-    overflow-y: auto; /* Enable scrolling within aside */
-}
-
-/* Optional: Add some height to the header and footer */
-header {
-    height: 80px; /* Fixed header height */
-}
-
-footer {
-    height: 80px; /* Fixed footer height */
 }
